@@ -1,0 +1,225 @@
+jQuery(function ($) {
+
+    /* Sticky Header */
+    if ($.fn.spSticyheader) {
+        $('header').spSticyheader({
+            hideHeaderTarget: '.preheader',
+            scrollHeader: 200,
+            customClass: 'make-small',
+            mobileHeader: true
+        });
+    }
+
+    /* Toggle menus */
+    $(".qlh").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".qlinks").toggleClass("open");
+    });
+
+    $(".cuh").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".grid2").toggleClass("open");
+    });
+
+    $(".ph").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".plinks").toggleClass("open");
+    });
+
+    $(".adh2").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".adcnt").toggleClass("open");
+    });
+
+    $(".prh").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".prlinks").toggleClass("open");
+    });
+
+    $(".ph1").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".plinks1").toggleClass("open");
+    });
+
+    $(".sh").on("click", function () {
+        $(this).toggleClass('iclose');
+        $(".slinks").toggleClass("open");
+    });
+
+    $(".side-menu-close").on("click", function () {
+        $('html').toggleClass('oflow');
+    });
+
+    /* Scroll actions */
+    $(window).on("scroll", function () {
+        let scrollTop = $(this).scrollTop();
+
+        if (scrollTop > 200) {
+            $('#scroll, #whatsapp').fadeIn();
+            $(".sse").css("opacity", "1");
+        } else {
+            $('#scroll, #whatsapp').fadeOut();
+        }
+    });
+   jQuery(document).ready(function($){
+    $('.blogslider').owlCarousel({
+        smartSpeed: 600,
+        autoplayTimeout: 10000,
+        margin: 10,
+        autoplay: true,
+        items: 1,
+        dots: false,
+        loop: true,
+        nav: true,
+        navText: [
+            '<svg width="20" height="20" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.945813 7.168V5.904H10.2098L5.53781 1.488L6.38581 0.624L12.1458 6.16V6.864L6.38581 12.416L5.52181 11.536L10.1618 7.168H0.945813Z" fill="#4B4B4B"/></svg>',
+            '<svg width="20" height="20" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M0.945813 7.168V5.904H10.2098L5.53781 1.488L6.38581 0.624L12.1458 6.16V6.864L6.38581 12.416L5.52181 11.536L10.1618 7.168H0.945813Z" fill="#4B4B4B"/></svg>'
+        ],
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 1.5
+            },
+            767: {
+                items: 3
+            },
+            991: {
+                items: 4
+            }
+        }
+    });
+});
+ $('.gfilter').click(function () {
+    $('.slwrap').toggleClass('show');
+  });
+
+  // Scroll to #cards-container and update dropdown label
+  $('.badge').click(function (e) {
+    e.preventDefault();
+
+    const selectedText = $(this).text().trim();
+
+    // Close the dropdown list (mobile)
+    $('.slwrap').removeClass('show');
+
+    // Update the dropdown button label (mobile)
+    $('#dropdownToggle').text(selectedText);
+
+    // Remove 'active' from all, add to current
+    $('.badge').removeClass('active');
+    $(this).addClass('active');
+
+  });
+});
+
+/* GSAP */
+gsap.registerPlugin(ScrollTrigger);
+
+/* Footer animation */
+gsap.to("footer", {
+    scrollTrigger: {
+        trigger: "footer",
+        start: "top bottom",
+        toggleActions: "play none none reverse"
+    },
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+});
+
+/* Span animations */
+gsap.utils.toArray(".fenq .ch2 span").forEach((el, i) => {
+    const fromX = i % 2 === 0 ? -150 : 150;
+
+    gsap.set(el, { x: fromX });
+
+    gsap.to(el, {
+        x: 0,
+        scrollTrigger: {
+            trigger: el,
+            start: "top 95%",
+            end: "top 30%",
+            scrub: 1
+        }
+    });
+});
+  const menuItems = document.querySelectorAll('.cta1');
+
+  menuItems.forEach(item => {
+    const submenu = item.querySelector('.sub-menu');
+
+    if (submenu) {
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('active');
+      });
+
+      item.addEventListener('mouseleave', () => {
+        item.classList.remove('active');
+      });
+    }
+  });
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('post-search');
+    const categoryButtons = document.querySelectorAll('.filter-category');
+    const posts = Array.from(document.querySelectorAll('.blog-item'));
+    let activeCategory = 'all';
+
+    categoryButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            activeCategory = this.dataset.category;
+            filterPosts();
+        });
+    });
+
+    searchInput.addEventListener('input', filterPosts);
+
+    // Initial reveal
+    revealVisiblePosts();
+
+    function filterPosts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let visiblePosts = [];
+
+        posts.forEach(post => {
+            const title = post.dataset.title || '';
+            const catNames = post.dataset.catNames?.split(' ') || [];
+            const catSlugs = post.dataset.categories?.split(' ') || [];
+
+            const catMatch = activeCategory === 'all' || catSlugs.includes(activeCategory);
+            const searchMatch =
+                title.includes(searchTerm) ||
+                catNames.some(n => n.includes(searchTerm));
+
+            if (catMatch && searchMatch) {
+                post.classList.remove('is-hidden');
+                visiblePosts.push(post);
+            } else {
+                post.classList.add('is-hidden');
+                post.classList.remove('is-visible');
+            }
+        });
+
+        staggerReveal(visiblePosts);
+    }
+
+    function staggerReveal(elements) {
+        elements.forEach((el, i) => {
+            el.classList.remove('is-visible');
+            setTimeout(() => {
+                el.classList.add('is-visible');
+            }, i * 80); // stagger delay
+        });
+    }
+
+    function revealVisiblePosts() {
+        const visible = posts.filter(p => !p.classList.contains('is-hidden'));
+        staggerReveal(visible);
+    }
+});
+
+
+
+
