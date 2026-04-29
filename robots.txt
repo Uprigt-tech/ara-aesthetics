@@ -1,5 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://creascosmeticsurgery.com/sitemap.xml
-
-

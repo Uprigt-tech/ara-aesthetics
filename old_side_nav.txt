@@ -1,3 +1,0 @@
-      <nav class="side-menu-nav">
-        <!-- auto generated side menu from top header menu -->
-    </nav>
