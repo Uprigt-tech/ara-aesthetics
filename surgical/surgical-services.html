@@ -108,10 +108,15 @@
 .stbanner .container { 
   position: relative;
   z-index: 1;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto !important;
 }
-.stbanner h1 { color: #fff !important; }
+.stbanner h1 { color: #fff !important; margin-top: 20px !important; }
+.stbanner .breadcrumb { margin-bottom: 0 !important; }
 .stbanner .breadcrumb a, .stbanner .breadcrumb .active { color: #eee !important; }
-.stbanner p.f20 { color: #ddd !important; }
+.stbanner p.f20 { color: #ddd !important; margin-top: 10px; }
 
 @media (max-width: 900px) {
   .servcat-wrap { grid-template-columns: 1fr; }
@@ -325,13 +330,11 @@
 <div class="stbanner-bg">
   <img src="../images/surgical_banner.png" alt="Surgical Services Banner">
 </div>
-<div class="container pb0 snavh">
+<div class="container pb0">
 <ul class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
 <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a href="../index.html" itemprop="item"><span itemprop="name">Home</span><meta content="1" itemprop="position"/></a></li>
 <li class="active" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Surgical &amp; Advanced Treatments</span><meta content="2" itemprop="position"/></li>
 </ul>
-</div>
-<div class="container pb0 vcenter">
 <div class="w80">
 <div class="bshape">
 <h1 class="mb1 ch1">Surgical &amp; Advanced Treatments</h1>
