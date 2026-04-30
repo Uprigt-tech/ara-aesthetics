@@ -797,7 +797,7 @@ border:1px solid #e0e0e0}
 header .main-menu>li:hover .sub-menu {
 display:block}
 header .main-menu .sub-menu {
-display:none;position:absolute;left:-20%;top:100%;width:240px;overflow:hidden;border-top:2px solid var(--pink);background:#fff;-webkit-box-shadow:0 1px 5px 0 rgba(83,83,83,.2);box-shadow:0 1px 5px 0 rgba(83,83,83,.2);z-index:5;transform:translateX(-50%);-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-o-transform:translateX(-50%)}
+display:none;position:absolute;right:0;top:100%;width:240px;overflow:hidden;border-top:2px solid var(--pink);background:#fff;-webkit-box-shadow:0 1px 5px 0 rgba(83,83,83,.2);box-shadow:0 1px 5px 0 rgba(83,83,83,.2);z-index:5;transform:none;-webkit-transform:none;-moz-transform:none;-o-transform:none}
 header .main-menu .dmenu .sub-menu {
 width:230px}
 header .main-menu .dmenu1 .sub-menu {
