@@ -803,9 +803,11 @@ width:230px}
 header .main-menu .dmenu1 .sub-menu {
 width:300px}
 header .main-menu .sub-menu a {
-display:flex;align-items:center;font-size:15px;padding:12px 20px;color:#000;font-weight:500;transition:.4s;-webkit-transition:.4s;-o-transition:.4s;border-bottom:1px solid #ccd6de}
+display:flex;align-items:center;font-size:15px;padding:12px 20px;color:#1a1a1a!important;font-weight:500;transition:.4s;-webkit-transition:.4s;-o-transition:.4s;border-bottom:1px solid #ccd6de}
+header .main-menu .sub-menu a span {
+color:#1a1a1a!important}
 header .main-menu .sub-menu a:hover {
-background:var(--red);color:#fff}
+background:var(--red);color:#fff!important}
 .bullet li {
 margin-bottom:15px}
 .bullet li:last-child {
