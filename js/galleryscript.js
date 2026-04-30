@@ -10,7 +10,7 @@ const renderCards = (cardsContainer, cards) => {
         <div class="card-body">
           <div class="imgh">
             <div class="nimg mb1">
-              <img src="${card.image}" class="shadow-sm rounded cover-image w-100" alt="Before and After">
+              <img src="../${card.image}" class="shadow-sm rounded cover-image w-100" alt="Before and After">
             </div>
           </div>
         </div>

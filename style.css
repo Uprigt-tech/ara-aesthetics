@@ -2475,7 +2475,7 @@ right:auto;left:0;top:auto;bottom:0}
 .sub-banner {
 background:url(images/surgical-procedure.png);background-size:cover;position:relative;overflow:hidden}
 .about {
-background:url(images/subbanner/about-us-banner.jpg) center;background-size:cover;position:relative;overflow:hidden}
+background:url(images/banner.png) center;background-size:cover;position:relative;overflow:hidden}
 .gallery {
 background:url(images/subbanner/gallery.jpg) center;background-size:cover;position:relative;overflow:hidden}
 .appointment {
