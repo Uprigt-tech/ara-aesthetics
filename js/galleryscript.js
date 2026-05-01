@@ -34,6 +34,7 @@ const renderCards = (cardsContainer, items) => {
                                 <img src="../${item.image}" class="shadow-sm rounded cover-image w-100" alt="Gallery Image">
                             </div>
                         </div>
+                        ${item.treatment ? `<h3 class="treatment-name">${item.treatment}</h3>` : ""}
                     </div>
                 </div>
             `;
@@ -68,29 +69,29 @@ const data = {
         { treatment: "Cheek Contouring", before: "images/before&after/Untitled design (42).png", after: "images/before&after/Untitled design (43).png" },
         { treatment: "Neck Skin Tightening", before: "images/before&after/Untitled design (45).png", after: "images/before&after/Untitled design (46).png" },
         
-        // Remaining Single Images
-        { image: "images/before&after/Untitled design (44).png" },
-        { image: "images/before&after/Untitled design (47).png" },
-        { image: "images/before&after/Untitled design (48).png" },
-        { image: "images/before&after/WhatsApp Image 2026-04-25 at 4.21.19 PM (1).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-25 at 4.21.19 PM (2).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-25 at 4.42.59 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-25 at 4.43.00 PM (1).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-25 at 4.43.01 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-25 at 4.43.02 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.20 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.21 PM (1).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.37 PM (1).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.37 PM (2).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.38 PM (1).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.39 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.44 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.46 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.47 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.49 PM (2).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.51 PM.jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.52 PM (1).jpeg" },
-        { image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.52 PM.jpeg" }
+        // Remaining Single Images (Many are already Before/After collages)
+        { treatment: "Laser Hair Removal", image: "images/before&after/Untitled design (44).png" },
+        { treatment: "Skin Lightening System", image: "images/before&after/Untitled design (47).png" },
+        { treatment: "Acne Scar Revision", image: "images/before&after/Untitled design (48).png" },
+        { treatment: "Advanced Dandruff Treatment", image: "images/before&after/WhatsApp Image 2026-04-25 at 4.21.19 PM (1).jpeg" },
+        { treatment: "Silk Smooth Hair Transformation", image: "images/before&after/WhatsApp Image 2026-04-25 at 4.21.19 PM (2).jpeg" },
+        { treatment: "Hair Density Restoration", image: "images/before&after/WhatsApp Image 2026-04-25 at 4.42.59 PM.jpeg" },
+        { treatment: "Underarm Whitening", image: "images/before&after/WhatsApp Image 2026-04-25 at 4.43.00 PM (1).jpeg" },
+        { treatment: "Leg Brightening Therapy", image: "images/before&after/WhatsApp Image 2026-04-25 at 4.43.01 PM.jpeg" },
+        { treatment: "Neck Darkness Treatment", image: "images/before&after/WhatsApp Image 2026-04-25 at 4.43.02 PM.jpeg" },
+        { treatment: "Hair Smoothening", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.20 PM.jpeg" },
+        { treatment: "Hair Growth Therapy", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.21 PM (1).jpeg" },
+        { treatment: "Keratin Treatment", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.37 PM (1).jpeg" },
+        { treatment: "Hair Straightening", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.37 PM (2).jpeg" },
+        { treatment: "Knee Pigmentation Therapy", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.38 PM (1).jpeg" },
+        { treatment: "Neck Darkness Correction", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.39 PM.jpeg" },
+        { treatment: "Underarm Brightening", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.44 PM.jpeg" },
+        { treatment: "Acne Control System", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.46 PM.jpeg" },
+        { treatment: "Professional Hair Spa", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.47 PM.jpeg" },
+        { treatment: "Arm Whitening", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.49 PM (2).jpeg" },
+        { treatment: "Hair Botox Treatment", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.51 PM.jpeg" },
+        { treatment: "Hair Straightening", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.52 PM (1).jpeg" },
+        { treatment: "Intense Hair Smoothing", image: "images/before&after/WhatsApp Image 2026-04-26 at 1.16.52 PM.jpeg" }
     ]
 };
 
