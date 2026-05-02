@@ -2556,18 +2556,56 @@ background:url(images/subbanner/breast-augmentation.png) center;background-size:
 .arbanner {
 background:url(images/subbanner/age-reversal.jpg) center;background-size:cover;position:relative;overflow:hidden}
 .stbanner {
-background:url(images/subbanner/skin-treatment.jpg) center;background-size:cover;position:relative;overflow:hidden}
-.htbanner {
-background:url(images/subbanner/hair-treatment.jpg) center;background-size:cover;position:relative;overflow:hidden}
-.blogbanner {
-background:url(images/subbanner/blog.jpg) right;background-size:cover;position:relative;overflow:hidden}
-.mbanner {
-background:url(images/subbanner/male-chest-banner.jpg) top right!important;background-size:cover;position:relative;overflow:hidden}
+  position: relative;
+  overflow: hidden;
+  padding: 130px 0 100px;
+  background: #333;
+}
+.stbanner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.stbanner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+.stbanner .container {
+  position: relative;
+  z-index: 1;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto !important;
+}
+.stbanner h1 {
+  color: #fff !important;
+  margin-top: 20px !important;
+}
+.stbanner .breadcrumb {
+  margin-bottom: 0 !important;
+}
+.stbanner .breadcrumb a,
+.stbanner .breadcrumb .active,
+.stbanner .breadcrumb li span {
+  color: #eee !important;
+}
+.stbanner p.f20 {
+  color: #ddd !important;
+  margin-top: 10px;
+}
 .sub-banner {
-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.sub-banner .breadcrumb li:last-child span,.sub-banner span {
-color:#fff}
-.sub-banner .breadcrumb li::before {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 background:#fff}
 .sub-banner .snavh {
 height:200px}
